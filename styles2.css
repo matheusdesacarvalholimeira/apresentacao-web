@@ -1,0 +1,109 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('img/0.png'); /* Atualize o caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Container das frases */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+
+/* Estilo das frases */
+.frase {
+    position: absolute;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Classe para frase visível */
+.frase.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Posições ajustadas para as frases */
+#frase1 {
+    top: 15%;
+    left: 10%;
+}
+
+#frase2 {
+    top: 15%;
+    left: 50%;
+}
+
+#frase3 {
+    top: 25%;
+    left: 80%;
+}
+
+#frase4 {
+    top: 35%;
+    left: 20%;
+}
+
+#frase5 {
+    top: 50%;
+    left: 70%;
+}
+
+#frase6 {
+    top: 60%;
+    left: 30%;
+}
+
+#frase7 {
+    top: 75%;
+    left: 15%;
+}
+
+#frase8 {
+    top: 80%;
+    left: 55%;
+}
+
+#frase9 {
+    top: 50%;
+    left: 40%; /* Ajuste este valor para posicionar a frase mais à esquerda */
+}
+
+/* Estilo das frases ao passar o mouse (hover) */
+.frase:hover {
+    transform: scale(1.1); /* Aumenta o tamanho para 110% */
+    transition: transform 0.3s ease; /* Transição suave */
+    transform: scale(1.1); /* Aumenta o tamanho para 110% */
+    transition: transform 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Define o cursor como "pointer" para indicar clicável */
+}
+
+/* Estilo das frases ao clicar */
+.frase.clicked {
+    color: #FFD700; /* Cor alterada após o clique */
+    transform: scale(1.2); /* Aumenta o tamanho para 120% */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+

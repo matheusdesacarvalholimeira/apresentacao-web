@@ -1,0 +1,104 @@
+/* Reset básico e estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Contêiner principal com fundo */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('img/0.png'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Título */
+.titulo {
+  font-size: 6.7em;
+  font-weight: bold;
+  margin-bottom: 0em;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fade-in-down 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Texto principal */
+.texto-principal {
+  font-size: 1.2em;
+  font-weight: bold;
+  max-width: 60%;
+  text-align: left;
+  line-height: 1.4em;
+  margin-top: -19px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in-up 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Texto inferior alinhado à direita */
+.texto-inferior {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  max-width: none;
+  white-space: nowrap;
+  text-align: right;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fade-in-right 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+/* Animações */
+@keyframes fade-in-down {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-right {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 4em;
+  }
+  
+  .texto-principal {
+      font-size: 1em;
+  }
+
+  .texto-inferior {
+      font-size: 1em;
+      bottom: 30px;
+      right: 10px;
+  }
+}
