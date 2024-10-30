@@ -10,6 +10,7 @@ body, html {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  cursor: none !important;
 }
 
 /* Contêiner principal com fundo */
@@ -101,4 +102,35 @@ body, html {
       bottom: 30px;
       right: 10px;
   }
+}
+
+.custom-cursor {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  pointer-events: none;
+  z-index: 900;
+}
+
+.cursor__small {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #F57F17; /* Cor laranja */
+  z-index: 5;
+}
+
+/* Estilos do cursor customizado */
+.custom-cursor {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
 }

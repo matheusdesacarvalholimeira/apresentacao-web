@@ -17,6 +17,7 @@ body {
     background-position: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    cursor: none !important;
 }
 
 /* Container das frases */
@@ -96,7 +97,6 @@ body {
     transition: transform 0.3s ease; /* Transição suave */
     transform: scale(1.1); /* Aumenta o tamanho para 110% */
     transition: transform 0.3s ease; /* Transição suave */
-    cursor: pointer; /* Define o cursor como "pointer" para indicar clicável */
 }
 
 /* Estilo das frases ao clicar */
@@ -106,4 +106,34 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.custom-cursor {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    pointer-events: none;
+    z-index: 900;
+}
+
+.cursor__small {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #F57F17; /* Cor laranja */
+    z-index: 5;
+}
+
+/* Estilos do cursor customizado */
+.custom-cursor {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
+}
 

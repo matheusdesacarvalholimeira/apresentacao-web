@@ -7,6 +7,7 @@ body, html {
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
+    cursor: none !important; /* Esconde o cursor padrão */
 }
 
 .background {
@@ -27,24 +28,23 @@ body, html {
     text-align: left;
     max-width: 600px;
     padding: 20px;
-    margin-left: 300px; /* Margem à esquerda para deslocar o contêiner */
-    margin-right: 20px; /* Margem à direita para evitar que o texto encoste na borda */
-    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura total */
+    margin-left: 300px;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
 /* Estilos para o parágrafo */
 .text-container p {
     margin: 0;
-    white-space: nowrap; /* Evita quebras de linha */
-    font-size: 24px; /* Tamanho fixo em pixels */
-    margin-left: 10px; /* Ajusta o deslocamento à esquerda */
+    white-space: nowrap;
+    font-size: 24px;
+    margin-left: 10px;
 }
 
-/* Configurações específicas para o segundo parágrafo */
 .text-container p.bold {
-    margin-top: 20px; /* Aumenta o espaçamento do segundo parágrafo */
+    margin-top: 20px;
     font-weight: bold;
-    font-size: 26px; /* Fonte levemente maior para o segundo parágrafo */
+    font-size: 26px;
 }
 
 /* Efeito de fade-in */
@@ -60,12 +60,45 @@ body, html {
 /* Media Query para telas pequenas */
 @media (max-width: 600px) {
     .text-container {
-        margin-left: 10px; /* Reduz margem à esquerda em telas menores */
-        margin-right: 10px; /* Mantém margem à direita em telas menores */
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .text-container p {
-        font-size: 20px; /* Ajuste do tamanho do texto em telas pequenas */
-        white-space: pre-wrap; /* Permite quebras de linha onde houver espaços */
+        font-size: 20px;
+        white-space: pre-wrap;
     }
 }
+
+/* Estilos do cursor customizado */
+.custom-cursor {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    pointer-events: none;
+    z-index: 900;
+}
+
+.cursor__small {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #F57F17; /* Cor laranja */
+    z-index: 5;
+}
+
+/* Estilos do cursor customizado */
+.custom-cursor {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
+}
+
