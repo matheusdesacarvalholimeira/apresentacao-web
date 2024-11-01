@@ -22,52 +22,39 @@ body, html {
     align-items: center;
 }
 
-/* Estilos do contêiner de texto */
-.text-container {
-    color: white;
-    text-align: left;
+/* Estilos do contêiner da imagem */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 600px;
     padding: 20px;
-    margin-left: 300px;
-    margin-right: 20px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
-/* Estilos para o parágrafo */
-.text-container p {
-    margin: 0;
-    white-space: nowrap;
-    font-size: 24px;
-    margin-left: 10px;
-}
-
-.text-container p.bold {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 26px;
-}
-
-/* Efeito de fade-in */
-.fade-in {
+/* Estilos da imagem central com animação de vinda de uma posição mais distante */
+.central-image {
+    max-width: 300px; /* Tamanho reduzido da imagem */
+    height: auto;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transform: translateY(200px); /* Começa 200px abaixo */
+    transition: opacity 1s ease-in, transform 1s ease-in;
 }
 
+/* Quando a imagem se torna visível */
 .visible {
     opacity: 1;
+    transform: translateY(0); /* Move para o local final */
+    animation: bounce 0.5s ease-out 1s; /* Adiciona o pulo após 1 segundo */
 }
 
-/* Media Query para telas pequenas */
-@media (max-width: 600px) {
-    .text-container {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .text-container p {
-        font-size: 20px;
-        white-space: pre-wrap;
-    }
+/* Animação do pulo */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-10px); } /* Sobe um pouco */
+    50% { transform: translateY(0); } /* Volta ao centro */
+    70% { transform: translateY(-5px); } /* Sobe um pouco menos */
+    100% { transform: translateY(0); } /* Volta ao ponto final */
 }
 
 /* Estilos do cursor customizado */
@@ -76,10 +63,11 @@ body, html {
     height: 80px;
     border-radius: 50%;
     position: absolute;
-    top: -40px;
-    left: -40px;
     pointer-events: none;
     z-index: 900;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
 }
 
 .cursor__small {
@@ -89,16 +77,3 @@ body, html {
     background-color: #F57F17; /* Cor laranja */
     z-index: 5;
 }
-
-/* Estilos do cursor customizado */
-.custom-cursor {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    pointer-events: none;
-    z-index: 900;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
-}
-

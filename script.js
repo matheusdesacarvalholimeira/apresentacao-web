@@ -1,17 +1,17 @@
 // Seleciona todos os elementos com a classe 'fade-in'
-const texts = document.querySelectorAll('.fade-in');
+const fadeElements = document.querySelectorAll('.fade-in');
 
 // Função para adicionar a classe 'visible' gradualmente
-function animateTexts() {
-    texts.forEach((text, index) => {
+function animateElements() {
+    fadeElements.forEach((element, index) => {
         setTimeout(() => {
-            text.classList.add('visible');
-        }, index * 1000); // Atraso de 1 segundo para cada texto
+            element.classList.add('visible');
+        }, index * 1000); // Atraso de 1 segundo para cada elemento
     });
 }
 
 // Executa a animação quando a página carrega
-window.onload = animateTexts;
+window.onload = animateElements;
 
 /* Código para o cursor customizado */
 const cursor = document.getElementById('js-cursor');
@@ -22,12 +22,11 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
 });
 
-// Função para ampliar o cursor grande ao passar sobre elementos específicos
-document.querySelectorAll('.fade-in').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        cursorBig.style.transform = 'scale(1)';
-    });
-    link.addEventListener('mouseleave', () => {
-        cursorBig.style.transform = 'scale(0)';
-    });
+// Função para ampliar o cursor grande ao passar sobre a imagem
+const image = document.querySelector('.central-image');
+image.addEventListener('mouseenter', () => {
+    cursorBig.style.transform = 'scale(1)';
+});
+image.addEventListener('mouseleave', () => {
+    cursorBig.style.transform = 'scale(0)';
 });

@@ -28,12 +28,12 @@ body {
     margin: 10px;
 }
 
-/* Estilo das frases */
+/* Estilo padrão das imagens/frases */
 .frase {
     position: absolute;
-    font-size: 1.5em;
-    color: white;
-    font-weight: bold;
+    width: 25vw;       /* Aumenta a largura de cada frase para 25% da largura da viewport */
+    max-width: 300px;  /* Limita o tamanho máximo para garantir que não fiquem muito grandes */
+    height: auto;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -46,55 +46,26 @@ body {
 }
 
 /* Posições ajustadas para as frases */
-#frase1 {
-    top: 15%;
-    left: 10%;
-}
+#frase1 { top: 15%; left: 10%; }
+#frase2 { top: 15%; left: 50%; }
+#frase3 { top: 25%; left: 80%; }
+#frase4 { top: 35%; left: 20%; }
+#frase5 { top: 50%; left: 70%; }
+#frase6 { top: 60%; left: 30%; }
+#frase7 { top: 75%; left: 15%; }
+#frase8 { top: 80%; left: 55%; }
+#frase9 { top: 45%; left: 40%; }
 
-#frase2 {
-    top: 15%;
-    left: 50%;
-}
-
-#frase3 {
-    top: 25%;
-    left: 80%;
-}
-
-#frase4 {
-    top: 35%;
-    left: 20%;
-}
-
-#frase5 {
-    top: 50%;
-    left: 70%;
-}
-
-#frase6 {
-    top: 60%;
-    left: 30%;
-}
-
-#frase7 {
-    top: 75%;
-    left: 15%;
-}
-
-#frase8 {
-    top: 80%;
-    left: 55%;
-}
-
-#frase9 {
-    top: 50%;
-    left: 40%; /* Ajuste este valor para posicionar a frase mais à esquerda */
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .frase {
+        width: 35vw;       /* Aumenta o tamanho das imagens em telas menores */
+        max-width: 180px;  /* Limita o tamanho máximo em telas menores */
+    }
 }
 
 /* Estilo das frases ao passar o mouse (hover) */
 .frase:hover {
-    transform: scale(1.1); /* Aumenta o tamanho para 110% */
-    transition: transform 0.3s ease; /* Transição suave */
     transform: scale(1.1); /* Aumenta o tamanho para 110% */
     transition: transform 0.3s ease; /* Transição suave */
 }
@@ -106,6 +77,7 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* Estilo do cursor customizado */
 .custom-cursor {
     width: 80px;
     height: 80px;
@@ -115,6 +87,7 @@ body {
     left: -40px;
     pointer-events: none;
     z-index: 900;
+    transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
 }
 
 .cursor__small {
@@ -124,16 +97,3 @@ body {
     background-color: #F57F17; /* Cor laranja */
     z-index: 5;
 }
-
-/* Estilos do cursor customizado */
-.custom-cursor {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    pointer-events: none;
-    z-index: 900;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%); /* Alinha o cursor ao centro do mouse */
-}
-
